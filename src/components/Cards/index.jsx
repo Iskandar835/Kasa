@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 
 const CardsSection = styled.section`
@@ -19,6 +20,9 @@ const CardsSection = styled.section`
         gap: 20px;
         background-color: #FFFFFF;
     }
+`
+const TheLink = styled(Link)`
+    width: 100%;
 `
 const Card = styled.div`
     position: relative;
@@ -51,30 +55,42 @@ const CardText = styled.h2`
 function GalleryCards() {
     return (
         <CardsSection>
+            <TheLink to="/fiche-logement">
             <Card>
                 <CardImg src="/" />
                 <CardText>Titre de la location</CardText>
             </Card>
+            </TheLink>
+            <TheLink to="/fiche-logement">
             <Card>
                 <CardImg src="/" />
                 <CardText>Titre de la location</CardText>
             </Card>
+            </TheLink>
+            <TheLink to="/fiche-logement">
             <Card>
                 <CardImg src="/" />
                 <CardText>Titre de la location</CardText>
             </Card>
+            </TheLink>
+            <TheLink to="/fiche-logement">
             <Card>
                 <CardImg src="/" />
                 <CardText>Titre de la location</CardText>
             </Card>
+            </TheLink>
+            <TheLink to="/fiche-logement">
             <Card>
                 <CardImg src="/" />
                 <CardText>Titre de la location</CardText>
             </Card>
+            </TheLink>
+            <TheLink to="/fiche-logement">
             <Card>
                 <CardImg src="/" />
                 <CardText>Titre de la location</CardText>
             </Card>
+            </TheLink>
         </CardsSection>
     )
 }

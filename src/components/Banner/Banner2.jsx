@@ -5,10 +5,10 @@ import styled from "styled-components";
 
 
 const BannerSection = styled.section`
-    margin: 0 100px 45px 100px;
+    margin: 0 100px 40px 100px;
     
     @media (max-width: 768px) {
-        margin: 0 20px 45px 20px;
+        margin: 0 20px 20px 20px;
     }
 `
 
