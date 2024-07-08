@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import Logo from "../../assets/logo_footer.png"
+import Logo from "../assets/logo_footer.png"
 
 
 const FooterSection = styled.footer`

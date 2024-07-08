@@ -1,8 +1,8 @@
 voici ci dessous l'algorythme de la page d'accueil:
 
-les cards affcihent les images des biens en location via les url inscrite en données dans le fichier JSON,
-au click d'une image (peut importe la quelle) redirection vers une nouvelle route qui affichera les details de la location,
+les cards affcihent les images des biens en location via les url inscrite en données dans le fichier JSON et les titres aussi via le fichier JSON.
+Au click d'une image (peut importe la quelle) redirection vers une nouvelle route qui affichera les details de la location,
 cette route sera la meme pour chaque location. Sa structure et son designe seront fixe et fait via divers fichier mais sont importation 
-d'image, de description et de note sera fait via les données present dans le fichier JSON, comment ? 
+d'images, de description, de note, de titre, le profil proprio et le contenu des 2 dropdown sera fait via les données present dans le fichier JSON, comment ? 
 Avec le meme principe que pour les icone poubelle qui supprimer l'image de la modale, voir avec les id pour que lors du clique sur l'image on soit 
-redirigée vers la bonne route. 
+redirigée vers route Accomodation et son contenu sera afficher en fonction de l'image cliquer. 

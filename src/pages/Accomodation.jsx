@@ -1,5 +1,5 @@
-import Slider from "../../components/Slider"
-import CharacteristicSection from "../../components/Characteristic"
+import Slider from "../components/Slider"
+import CharacteristicSection from "../components/Characteristic"
 
 
 function AccommodationSheet() {

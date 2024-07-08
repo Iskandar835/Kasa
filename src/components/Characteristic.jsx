@@ -1,11 +1,14 @@
 import styled from "styled-components";
-import Profil from "../../assets/image_apropos.png"
+import Profil from "../assets/image_apropos.png"
+import TheDropdown from '../style/atoms.jsx';
+import { Break } from "../style/atoms.jsx";
 
 
 const Section = styled.section`
-    margin: 25px 100px;
-     @media (max-width: 768px) {
-        margin: 0 20px;
+    margin: 0 100px 50px 100px;
+     
+    @media (max-width: 768px) {
+        margin: 0 20px 25px 20px;
     }
 `
 const TitleAndPerson = styled.div`
@@ -19,38 +22,25 @@ const TitleAndPerson = styled.div`
 const TitleAndTags = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 10px 0 0 0;
-`
-
-const PersonAndRating = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-
-     @media (max-width: 768px) {
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        margin-top: 5px;
-    }
 `
 const Title = styled.h1`
-    color: #FF6060;
+    margin: 0;
     font-size: 36px;
     font-weight: 500;
-    margin: 0;
-
+    color: #FF6060;
+    
     @media (max-width: 768px) {
         font-size: 18px;
     }
 `
 const Subtitle = styled.h2`
+    margin: 5px 0 20px 0;
     font-size: 18px;
     font-weight: 500;
-    margin: 5px 0 20px 0;
-
+    
     @media (max-width: 768px) {
+        margin: 10px 0;
         font-size: 14px;
-        margin: 5px 0 10px 0;
     }
 `
 const TagsDiv = styled.div`
@@ -61,65 +51,63 @@ const Tags = styled.span`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
-    font-weight: 700;
-    background: #FF6060;
-    color: #FFFFFF;
     width: 115px;
     height: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+    background: #FF6060;
     border-radius: 10px;
 
     @media (max-width: 768px) {
-    width: 84px;
-    height: 18px;  
-       border-radius: 5px;
-    font-size: 10px;
+        width: 84px;
+        height: 18px;  
+        font-size: 10px;
+        border-radius: 5px;
     }
 `
-const Name = styled.p`
-    color: #FF6060;
-    font-size: 18px;
-    font-weight: 500;
-    margin: 0;
+const PersonAndRating = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 
      @media (max-width: 768px) {
-        font-size: 12px;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-top: 20px;
     }
-
 `
 const NameAndPics = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
     margin-left: 47px;
-
-  
 `
-const ProfilPics = styled.img`
-    border-radius: 100%;
-    object-fit: cover;
-    width: 64px;
-    height: 64px;
-
-    @media (max-width: 768px) {
-        width: 32px;
-    height: 32px;
-    }
-
-`
-
 const NameAndSurname = styled.div`
     display: flex;
     flex-direction: column;
 `
-const Rating = styled.i`
-    font-size: 24px;
+const Name = styled.p`
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
     color: #FF6060;
-
-    @media (max-width: 768px) {
-        font-size: 13px;
-    }
+    text-align: right;
     
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
+`
+const ProfilPics = styled.img`
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    object-fit: cover;
+    
+    @media (max-width: 768px) {
+        width: 32px;
+        height: 32px;
+    }
 `
 const RatingDiv = styled.div`
     display: flex;
@@ -128,12 +116,41 @@ const RatingDiv = styled.div`
 
     @media (max-width: 768px) {
         align-items: center;
+        gap: 5px;
     }
 `
+const Rating = styled.i`
+    font-size: 24px;
+    color: #FF6060;
+
+    @media (max-width: 768px) {
+        font-size: 13px;
+    }
+`
+const BothDropdown = styled.div`
+    display: flex;
+    gap: 80px;
+    margin-top: 25px;
+
+    @media (max-width: 768px) {
+       flex-direction: column;
+       gap: 20px;
+       margin-top: 15px;
+    }
+`
+const dropdownData = [
+    {
+      title: "Description",
+      content: ""
+    },
+    {
+      title: "Equipements",
+      content: ""
+    },
+    
+  ];
 
 function CharacteristicSection() {
-
-    
     return (
         <Section>
             <TitleAndPerson>
@@ -149,7 +166,7 @@ function CharacteristicSection() {
                 <PersonAndRating>
                     <NameAndPics>
                         <NameAndSurname>
-                            <Name>Revenir dessus</Name>
+                            <Name>Alexandre<Break />Dumas</Name>
                         </NameAndSurname>
                         <ProfilPics src={Profil} />
                     </NameAndPics>
@@ -162,9 +179,13 @@ function CharacteristicSection() {
                     </RatingDiv>
                 </PersonAndRating>
             </TitleAndPerson>
+            <BothDropdown>
+                {dropdownData.map((item, index) => (
+                <TheDropdown key={index} title={item.title} content={item.content} />
+                ))}
+            </BothDropdown>
         </Section>
     )
-  
 }
 
 export default CharacteristicSection

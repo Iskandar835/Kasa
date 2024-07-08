@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Error from './components/Error'
-import GlobalStyle from './components/Body/index.jsx'
-import Header from './components/Header/index.jsx'
-import About from './pages/Apropos/index.jsx'
-import Home from './pages/Accueil/index.jsx'
-import AccommodationSheet from './pages/Fiche-logement/index.jsx'
-import Footer from './components/Footer/index.jsx'
+import Error from './pages/Error'
+import GlobalStyle from './components/Body.jsx'
+import Header from './components/Header.jsx'
+import About from './pages/About.jsx'
+import Home from './pages/Home.jsx'
+import AccommodationSheet from './pages/Accomodation.jsx'
+import Footer from './components/Footer.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

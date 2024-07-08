@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import Logo from '../../assets/image_accueil.png'
+import Logo from '../assets/image_accueil.png'
 
 
 const BannerSection = styled.section`
-    margin: 0 100px;
+    margin: 0 100px 25px 100px;
 
     @media (max-width: 768px) {
-        margin: 0 20px;
+        margin: 0 20px 10px 20px;
     }
 `
 const BannerSlider = styled.div`
