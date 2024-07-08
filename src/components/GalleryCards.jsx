@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
-import CardAlone from "./card";
-import data from "../../data/data.json"
+import CardAlone from "./Card";
+import data from "../data/data.json"
 
 
 const CardsSection = styled.section`

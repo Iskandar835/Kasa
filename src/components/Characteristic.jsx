@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Profil from "../assets/image_apropos.png"
-import TheDropdown from '../style/atoms.jsx';
-import { Break } from "../style/atoms.jsx";
+import TheDropdown from '../style/atoms';
+import { Break } from "../style/atoms";
 
 
 const Section = styled.section`

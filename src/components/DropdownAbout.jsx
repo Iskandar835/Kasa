@@ -1,4 +1,4 @@
-import TheDropdown from '../style/atoms.jsx';
+import TheDropdown from '../style/atoms';
 import styled from 'styled-components';
 
 
