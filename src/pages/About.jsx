@@ -1,5 +1,5 @@
-import BannerAbout from "../components/Banner/Banner1"
-import DisplayAllDropdown from "../components/DropdownAbout"
+import BannerAbout from '../components/banner/Banner1'
+import DisplayAllDropdown from '../components/DropdownAbout'
 
 
 function About() {

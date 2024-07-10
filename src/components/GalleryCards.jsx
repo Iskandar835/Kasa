@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { useEffect, useState } from "react"
-import { Link } from "react-router-dom";
-import CardAlone from "./Card";
-import data from "../data/data.json"
+import styled from 'styled-components'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import CardAlone from './Card'
+import data from '../data/data.json'
 
 
 const CardsSection = styled.section`
@@ -14,6 +14,10 @@ const CardsSection = styled.section`
     padding: 55px 50px 45px 50px;
     background-color: #F6F6F6;
     border-radius: 25px;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        margin: 0 30px 50px 30px;
+    }
     
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
@@ -42,8 +46,7 @@ function GalleryCards() {
     return (
       <CardsSection>
         {cards.map((card) => (
-        //   <TheLink1 key={card.id} to={`/fiche-logement/${card.id}`}>
-          <TheLink key={card.id} to={`/fiche-logement`}>
+          <TheLink key={card.id} to={`/fiche-logement/${card.id}`}>
             <CardAlone title={card.title} cover={card.cover} />
           </TheLink>
         ))}

@@ -1,11 +1,19 @@
-import styled from "styled-components";
-import Profil from "../assets/image_apropos.png"
-import TheDropdown from '../style/atoms';
-import { Break } from "../style/atoms";
-
+import styled from 'styled-components'
+import TheDropdown from '../components/DropdownGeneric'
+import AllTags from './Tags'
+import StarRating from './StarRating'
+// import { Break } from '../style/atoms'
+import { useParams } from 'react-router-dom'
+import data from '../data/data.json'
+import Slider from './Slider'
+import Hostname from './Hostname'
 
 const Section = styled.section`
     margin: 0 100px 50px 100px;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        margin: 0 30px 50px 30px;
+    }
      
     @media (max-width: 768px) {
         margin: 0 20px 25px 20px;
@@ -46,30 +54,14 @@ const Subtitle = styled.h2`
 const TagsDiv = styled.div`
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 `
-const Tags = styled.span`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 115px;
-    height: 25px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #FFFFFF;
-    background: #FF6060;
-    border-radius: 10px;
 
-    @media (max-width: 768px) {
-        width: 84px;
-        height: 18px;  
-        font-size: 10px;
-        border-radius: 5px;
-    }
-`
 const PersonAndRating = styled.div`
     display: flex;
     flex-direction: column;
     gap: 25px;
+    
 
      @media (max-width: 768px) {
         flex-direction: row-reverse;
@@ -81,23 +73,9 @@ const NameAndPics = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-left: 47px;
+    margin-left: 50px;
 `
-const NameAndSurname = styled.div`
-    display: flex;
-    flex-direction: column;
-`
-const Name = styled.p`
-    margin: 0;
-    font-size: 18px;
-    font-weight: 500;
-    color: #FF6060;
-    text-align: right;
-    
-    @media (max-width: 768px) {
-        font-size: 12px;
-    }
-`
+
 const ProfilPics = styled.img`
     width: 64px;
     height: 64px;
@@ -119,14 +97,7 @@ const RatingDiv = styled.div`
         gap: 5px;
     }
 `
-const Rating = styled.i`
-    font-size: 24px;
-    color: #FF6060;
 
-    @media (max-width: 768px) {
-        font-size: 13px;
-    }
-`
 const BothDropdown = styled.div`
     display: flex;
     gap: 80px;
@@ -138,44 +109,59 @@ const BothDropdown = styled.div`
        margin-top: 15px;
     }
 `
-const dropdownData = [
-    {
-      title: "Description",
-      content: ""
-    },
-    {
-      title: "Equipements",
-      content: ""
-    },
-    
-  ];
+const BannerSection = styled.section`
+    margin: 0 100px 25px 100px;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        margin: 0 30px 25px 30px;
+    }
+
+    @media (max-width: 768px) {
+        margin: 0 20px 10px 20px;
+    }
+`
+
 
 function CharacteristicSection() {
+    const { id } = useParams(); 
+    const logement = data.find(item => item.id === id); 
+
+    const dropdownData = [
+        {
+          title: "Description",
+          content: logement.description
+        },
+        {
+          title: "Equipements",
+          content: logement.equipments
+        }
+    ];
+    
     return (
+        <>
+        <BannerSection>
+            
+                <Slider/>
+            
+        </BannerSection>
         <Section>
             <TitleAndPerson>
                 <TitleAndTags>
-                    <Title>Paris center on the romantique canal Saint Martin</Title>
-                    <Subtitle>Paris, ile-de-France</Subtitle>
-                    <TagsDiv>
-                        <Tags>Cosy</Tags>
-                        <Tags>Canal</Tags>
-                        <Tags>Paris 10</Tags>
+                    <Title>{logement.title}</Title>
+                    <Subtitle>{logement.location}</Subtitle>
+                    <TagsDiv >
+                        {logement.tags.map((item, index) => (
+                            <AllTags key={index} content={item} />
+                        ))}
                     </TagsDiv>
                 </TitleAndTags>
                 <PersonAndRating>
                     <NameAndPics>
-                        <NameAndSurname>
-                            <Name>Alexandre<Break />Dumas</Name>
-                        </NameAndSurname>
-                        <ProfilPics src={Profil} />
+                        <Hostname fullName={logement.host.name} />
+                        <ProfilPics src={logement.host.picture} />
                     </NameAndPics>
                     <RatingDiv>
-                        <Rating className="fa-solid fa-star"></Rating>
-                        <Rating className="fa-solid fa-star"></Rating>
-                        <Rating className="fa-solid fa-star"></Rating>
-                        <Rating className="fa-solid fa-star"></Rating>
-                        <Rating className="fa-solid fa-star"></Rating>
+                        <StarRating rating={parseInt(logement.rating, 10)} />
                     </RatingDiv>
                 </PersonAndRating>
             </TitleAndPerson>
@@ -185,6 +171,7 @@ function CharacteristicSection() {
                 ))}
             </BothDropdown>
         </Section>
+        </>
     )
 }
 

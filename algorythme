@@ -6,3 +6,14 @@ cette route sera la meme pour chaque location. Sa structure et son designe seron
 d'images, de description, de note, de titre, le profil proprio et le contenu des 2 dropdown sera fait via les données present dans le fichier JSON, comment ? 
 Avec le meme principe que pour les icone poubelle qui supprimer l'image de la modale, voir avec les id pour que lors du clique sur l'image on soit 
 redirigée vers route Accomodation et son contenu sera afficher en fonction de l'image cliquer. 
+
+Pour les Tags, il faut fabriquer le tags ailleur dans un fichier dans component puis l'importer et faire un map uniquement
+par rapport a l'id selectioner.
+
+Pour les etoiles il faut les mettres de base grise, faire un ternaire qui les mettrons en rouge 
+en fonction du rating du profil 
+
+concernant les dropdown description et equipement il faut surement les separés dans un autre fichier components et les importer
+directement sur la page accomodation. 
+
+ensuite passer au carrousel

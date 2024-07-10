@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components"
-import Logo from "../assets/logo.png";
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import Logo from '../assets/logo.png'
 
 
 
@@ -8,6 +8,10 @@ const HeaderSection = styled.header`
     display: flex;
     justify-content: space-between;
     padding: 45px 100px;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        padding: 30px;
+    }
 
     @media (max-width: 768px) {
         padding: 20px;

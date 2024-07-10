@@ -1,12 +1,17 @@
-import TheDropdown from '../style/atoms';
-import styled from 'styled-components';
+import TheDropdown from '../components/DropdownGeneric'
+import styled from 'styled-components'
+
 
 
 const Section = styled.section`
   margin: 0 210px 40px 210px;
 
+  @media (min-width: 768px) and (max-width: 1024px) {
+      margin: 0 110px 40px 110px;
+    }
+
   @media (max-width: 768px) {
-    margin: 0 20px 20px 20px;
+      margin: 0 20px 20px 20px;
   }
 `
 const AllTheDropdown = styled.div`
