@@ -29,18 +29,12 @@ const CardsSection = styled.section`
 `
 const TheLink = styled(Link)`
     width: 100%;
-
-    @media (max-width: 768px) {
-        &:nth-child(n + 4) {
-          display: none; 
-        }
-    }
 `
 
 function GalleryCards() {
     const [cards, setCards] = useState([]);
     useEffect(() => {
-      setCards(data.slice(0, 6)); 
+      setCards(data); 
     }, []);
   
     return (

@@ -41,19 +41,23 @@ const ContentSlideDown = styled.div`
   color: #000000;
   background: #F6F6F6;
   border-radius: 5px;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 250ms ease-in-out;
+  overflow: auto;
+  height: 0;
+  transition: height 250ms ease-in-out;
 
 
-  ${({ $isActive }) =>
+  ${({ $isActive }) => 
     $isActive &&
     css`
-      max-height: 200px;
+      height: 200px;
       padding: 0 20px;
-    `}
+    `
+  }
 `
 const Text = styled.p`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   font-size: 18px;
   font-weight: 400;
 
@@ -61,13 +65,13 @@ const Text = styled.p`
     font-size: 12px;
   }
 `
+function TheDropdown({ title, content }) {
+  const [isActive, setIsActive] = useState(false);
 
-function TheDropdown( { title, content }) {
-    const [isActive, setIsActive] = useState(false);
-    function handleToggle() {
-      setIsActive((prevIsActive) => !prevIsActive)
-    }
-  
+  function handleToggle() {
+    setIsActive(prevIsActive => !prevIsActive);
+  }
+
   return (
     <Dropdown>
       <TitleAndIcon>
@@ -78,21 +82,21 @@ function TheDropdown( { title, content }) {
           onClick={handleToggle}
         />
       </TitleAndIcon>
-      <ContentSlideDown $isActive={isActive}>
+      <ContentSlideDown
+        $isActive={isActive}>
         <Text>{content}</Text>
-        
       </ContentSlideDown>
     </Dropdown>
-   )
+  );
 }
 
 TheDropdown.propTypes = {
-    title: PropTypes.string,
-    
-    content: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string)
-  ]).isRequired
-}
+  title: PropTypes.string.isRequired,
+  content: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]).isRequired,
+};
 
-export default TheDropdown
+export default TheDropdown;

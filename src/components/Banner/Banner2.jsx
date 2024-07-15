@@ -16,7 +16,7 @@ const BannerSection = styled.section`
 `
 const BannerTitle = styled.h1`
     position: absolute;
-    z-index: 2;
+    margin: 40px 20px;
     font-size: 48px;
     color: white;
     text-align: center;

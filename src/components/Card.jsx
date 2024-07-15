@@ -8,8 +8,16 @@ const Card = styled.div`
     align-items: flex-end;
     width: 100%;
     height: 340px;
-    background-color: #FF6060;
     border-radius: 10px;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(10, 10, 10, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(0, 0, 0, 0.5) 100%);
+    }
     
     @media (max-width: 768px) {
         height: 255px;
@@ -23,12 +31,11 @@ const CardImg = styled.img`
 `
 const CardText = styled.h2`
     position: absolute;
-    margin-left: 20px;
+    margin: 15px 20px;
     font-size: 18px;
     font-weight: 700;
     color: #FFFFFF;
 `
-
 function CardAlone({ cover, title }) {
     return(
         <Card>

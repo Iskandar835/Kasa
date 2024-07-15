@@ -2,11 +2,11 @@ import styled from 'styled-components'
 import TheDropdown from '../components/DropdownGeneric'
 import AllTags from './Tags'
 import StarRating from './StarRating'
-// import { Break } from '../style/atoms'
 import { useParams } from 'react-router-dom'
 import data from '../data/data.json'
 import Slider from './Slider'
 import Hostname from './Hostname'
+
 
 const Section = styled.section`
     margin: 0 100px 50px 100px;
@@ -87,16 +87,7 @@ const ProfilPics = styled.img`
         height: 32px;
     }
 `
-const RatingDiv = styled.div`
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 15px;
 
-    @media (max-width: 768px) {
-        align-items: center;
-        gap: 5px;
-    }
-`
 
 const BothDropdown = styled.div`
     display: flex;
@@ -109,41 +100,33 @@ const BothDropdown = styled.div`
        margin-top: 15px;
     }
 `
-const BannerSection = styled.section`
-    margin: 0 100px 25px 100px;
 
-    @media (min-width: 768px) and (max-width: 1024px) {
-        margin: 0 30px 25px 30px;
-    }
-
-    @media (max-width: 768px) {
-        margin: 0 20px 10px 20px;
-    }
-`
 
 
 function CharacteristicSection() {
     const { id } = useParams(); 
-    const logement = data.find(item => item.id === id); 
-
+    const logement = data.find(item => item.id === id)
+    // ***************
+    const content2 = logement.equipments.map((item, index) => (
+        <span key={index}>{item}</span>
+    ))
+    // ***************
     const dropdownData = [
         {
           title: "Description",
           content: logement.description
         },
         {
-          title: "Equipements",
-          content: logement.equipments
+            title: "Equipements",
+            // *****************
+            content: content2
+            // *****************
         }
-    ];
+    ]
     
     return (
         <>
-        <BannerSection>
-            
-                <Slider/>
-            
-        </BannerSection>
+        <Slider images={logement.pictures}/>
         <Section>
             <TitleAndPerson>
                 <TitleAndTags>
@@ -160,9 +143,7 @@ function CharacteristicSection() {
                         <Hostname fullName={logement.host.name} />
                         <ProfilPics src={logement.host.picture} />
                     </NameAndPics>
-                    <RatingDiv>
-                        <StarRating rating={parseInt(logement.rating, 10)} />
-                    </RatingDiv>
+                    <StarRating rating={parseInt(logement.rating, 10)} />
                 </PersonAndRating>
             </TitleAndPerson>
             <BothDropdown>

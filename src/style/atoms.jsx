@@ -35,7 +35,5 @@ export const BannerImg = styled.img`
 `
 // *****************************************************
 
-export const Break = styled.br`
-`
 
 // revoir ce fichier car fil du code je pense qu'on va devoir rajouter des éléments 
