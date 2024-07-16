@@ -1,6 +1,5 @@
-import TheDropdown from '../components/DropdownGeneric'
 import styled from 'styled-components'
-
+import TheCollapse from './CollapseGeneric'
 
 
 const Section = styled.section`
@@ -14,7 +13,7 @@ const Section = styled.section`
       margin: 0 20px 20px 20px;
   }
 `
-const AllTheDropdown = styled.div`
+const AllCollapse = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -24,7 +23,7 @@ const AllTheDropdown = styled.div`
     gap: 20px;
   }
 `
-const dropdownData = [
+const CollapseData = [
   {
     title: "Fiabilité",
     content: "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes."
@@ -43,16 +42,16 @@ const dropdownData = [
   }
 ]
 
-function DisplayAllDropdown() {
+function DisplayAllCollapse() {
   return(
     <Section>
-      <AllTheDropdown> 
-      {dropdownData.map((item, index) => (
-        <TheDropdown key={index} title={item.title} content={item.content} />
-      ))}
-      </AllTheDropdown>
+      <AllCollapse> 
+        {CollapseData.map((item, index) => (
+          <TheCollapse key={index} title={item.title} content={item.content} />
+        ))}
+      </AllCollapse>
     </Section>
   )
 }
 
-export default DisplayAllDropdown;
+export default DisplayAllCollapse

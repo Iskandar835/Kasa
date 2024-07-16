@@ -8,21 +8,18 @@ const NameAndSurname = styled.div`
     color: #FF6060;
     text-align: right;
 
-     @media (max-width: 768px) {
+    @media (max-width: 768px) {
         font-size: 12px;
     }
 `
 const Name = styled.p`
     margin: 0;
-   
 `
 const Surname = styled.p`
     margin: 0;
-   
 `
-
 function Hostname ({ fullName }) {
-    const [firstName, lastName] = fullName.split(' ');
+    const [firstName, lastName] = fullName.split(' ')
 
     return (
         <NameAndSurname>

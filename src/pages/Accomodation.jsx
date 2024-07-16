@@ -1,13 +1,12 @@
+import SliderAndCharacteristic from '../components/Characteristics'
 
-import CharacteristicSection from '../components/Characteristic'
 
-
-function AccommodationSheet() {
+function Accommodation() {
     return (
-    <main>
-        <CharacteristicSection />
-    </main>
+        <main>
+            <SliderAndCharacteristic />
+        </main>
     )
 }
 
-export default AccommodationSheet
+export default Accommodation

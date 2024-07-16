@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 
-// All the variable for the Banner on homepage and about 
 export const BannerContainer = styled.div`
     position: relative;    
     display: flex;
@@ -33,7 +32,3 @@ export const BannerImg = styled.img`
     height: 100%;
     object-fit: cover;
 `
-// *****************************************************
-
-
-// revoir ce fichier car fil du code je pense qu'on va devoir rajouter des éléments 

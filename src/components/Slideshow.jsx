@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 
@@ -47,6 +47,10 @@ const ArrowLeft = styled.i`
     left: 20px;
     cursor: pointer;
 
+    ${props => props.$hide && css`
+        display: none;
+      `}
+    
     @media (max-width: 768px) {
         left: 8px;
     }
@@ -55,7 +59,11 @@ const ArrowRight = styled.i`
     position: absolute;
     right: 20px;
     cursor: pointer;
-
+    
+    ${props => props.$hide && css`
+        display: none;
+      `}
+    
     @media (max-width: 768px) {
         right: 8px;
     }
@@ -63,7 +71,12 @@ const ArrowRight = styled.i`
 const NumberDiv = styled.div`
     position: absolute;
     bottom: 10px;
-     @media (max-width: 768px) {
+    
+    ${props => props.$hide && css`
+        display: none;
+      `}
+    
+    @media (max-width: 768px) {
         display: none;
     }
 `
@@ -71,32 +84,33 @@ const Number = styled.p`
     font-size: 18px;
     font-weight: 500;
 `
-function Slider({ images }) {
-    const [currentIndex, setCurrentIndex] = useState(0)
 
+function Slideshow({ images }) {
+    const [currentIndex, setCurrentIndex] = useState(0)
     const handleNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-      }
-    
-      const handlePrev = () => {
+    }
+    const handlePrev = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
-      }
+    }
+    const hideControls = images.length <= 1
+
     return(
-    <BannerSection>
-        <BannerSlider>
-            <BannerImg src={images[currentIndex]} alt="carrousel" />
-            <ArrowLeft className="fa-solid fa-chevron-left arrow" id="prev" onClick={handlePrev}></ArrowLeft>
-            <ArrowRight className="fa-solid fa-chevron-right arrow" id="next" onClick={handleNext}></ArrowRight>
-            <NumberDiv>
-                <Number>{currentIndex + 1} / {images.length}</Number>
-            </NumberDiv>
-        </BannerSlider>
-    </BannerSection>
+        <BannerSection>
+            <BannerSlider>
+                <BannerImg src={images[currentIndex]} alt="Photo en carrousel du bien" />
+                <ArrowLeft className="fa-solid fa-chevron-left arrow" $hide={hideControls} onClick={handlePrev}></ArrowLeft>
+                <ArrowRight className="fa-solid fa-chevron-right arrow" $hide={hideControls} onClick={handleNext}></ArrowRight>
+                <NumberDiv $hide={hideControls}>
+                    <Number>{currentIndex + 1} / {images.length}</Number>
+                </NumberDiv>
+            </BannerSlider>
+        </BannerSection>
     )
 }
 
-Slider.propTypes = {
+Slideshow.propTypes = {
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
-export default Slider
+export default Slideshow

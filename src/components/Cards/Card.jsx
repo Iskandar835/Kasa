@@ -36,10 +36,11 @@ const CardText = styled.h2`
     font-weight: 700;
     color: #FFFFFF;
 `
+
 function CardAlone({ cover, title }) {
     return(
         <Card>
-            <CardImg src={cover} />
+            <CardImg src={cover} alt='Photo du bien en location'/>
             <CardText>{title}</CardText>
         </Card>
     )

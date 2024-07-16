@@ -1,7 +1,7 @@
+import styled from 'styled-components'
 import { BannerContainer } from '../../style/atoms'
 import { BannerImg } from '../../style/atoms'
 import Image from '../../assets/image_apropos.png'
-import styled from 'styled-components'
 
 
 const BannerSection = styled.section`
@@ -23,10 +23,9 @@ function BannerAbout() {
     return (
         <BannerSection>
             <StyledBannerContainer>
-                <BannerImg src={Image} />
+                <BannerImg src={Image} alt='Image de la bannière'/>
             </StyledBannerContainer>
         </BannerSection>
-
     )
 }
 

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import CardAlone from './Card'
-import data from '../data/data.json'
+import data from '../../data/data.json'
 
 
 const CardsSection = styled.section`
@@ -32,10 +32,10 @@ const TheLink = styled(Link)`
 `
 
 function GalleryCards() {
-    const [cards, setCards] = useState([]);
+    const [cards, setCards] = useState([])
     useEffect(() => {
       setCards(data); 
-    }, []);
+    }, [])
   
     return (
       <CardsSection>
@@ -45,7 +45,7 @@ function GalleryCards() {
           </TheLink>
         ))}
       </CardsSection>
-    );
+    )
   }
   
-  export default GalleryCards;
+  export default GalleryCards

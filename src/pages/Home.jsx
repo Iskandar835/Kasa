@@ -1,5 +1,5 @@
-import BannerHome from '../components/banner/Banner2'
-import GalleryCards from '../components/GalleryCards'
+import BannerHome from '../components/Banners/BannerHome'
+import GalleryCards from '../components//Cards/GalleryCards'
 
 
 function Home() {

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
+
 const Tags = styled.span`
     display: flex;
     align-items: center;
@@ -23,14 +24,12 @@ const Tags = styled.span`
         border-radius: 5px;
     }
 `
-
-function AllTags( {content} ) {
+function AllTags({ content }) {
     return(
         <>
-         <Tags>{content}</Tags>
+            <Tags>{content}</Tags>
         </>
     )
-
 }
 
 AllTags.propTypes = {

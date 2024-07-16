@@ -1,11 +1,12 @@
 import styled from 'styled-components'
-import TheDropdown from '../components/DropdownGeneric'
-import AllTags from './Tags'
-import StarRating from './StarRating'
 import { useParams } from 'react-router-dom'
 import data from '../data/data.json'
-import Slider from './Slider'
+import Slideshow from './Slideshow'
+import AllTags from './Tags'
 import Hostname from './Hostname'
+import ProfilPicture from './ProfilPics'
+import StarRating from './RatingParams/RatingStars'
+import CollapseAccomodation from './Collapses/CollapseAccomodation'
 
 
 const Section = styled.section`
@@ -56,14 +57,12 @@ const TagsDiv = styled.div`
     gap: 10px;
     flex-wrap: wrap;
 `
-
 const PersonAndRating = styled.div`
     display: flex;
     flex-direction: column;
     gap: 25px;
     
-
-     @media (max-width: 768px) {
+    @media (max-width: 768px) {
         flex-direction: row-reverse;
         justify-content: space-between;
         margin-top: 20px;
@@ -75,23 +74,9 @@ const NameAndPics = styled.div`
     gap: 10px;
     margin-left: 50px;
 `
-
-const ProfilPics = styled.img`
-    width: 64px;
-    height: 64px;
-    border-radius: 100%;
-    object-fit: cover;
-    
-    @media (max-width: 768px) {
-        width: 32px;
-        height: 32px;
-    }
-`
-
-
-const BothDropdown = styled.div`
+const BothCollapse = styled.div`
     display: flex;
-    gap: 80px;
+    gap: 75px;
     margin-top: 25px;
 
     @media (max-width: 768px) {
@@ -101,16 +86,12 @@ const BothDropdown = styled.div`
     }
 `
 
-
-
-function CharacteristicSection() {
-    const { id } = useParams(); 
+function SliderAndCharacteristic() {
+    const { id } = useParams()
     const logement = data.find(item => item.id === id)
-    // ***************
     const content2 = logement.equipments.map((item, index) => (
         <span key={index}>{item}</span>
     ))
-    // ***************
     const dropdownData = [
         {
           title: "Description",
@@ -118,42 +99,40 @@ function CharacteristicSection() {
         },
         {
             title: "Equipements",
-            // *****************
             content: content2
-            // *****************
         }
     ]
     
     return (
         <>
-        <Slider images={logement.pictures}/>
-        <Section>
-            <TitleAndPerson>
-                <TitleAndTags>
-                    <Title>{logement.title}</Title>
-                    <Subtitle>{logement.location}</Subtitle>
-                    <TagsDiv >
-                        {logement.tags.map((item, index) => (
+            <Slideshow images={logement.pictures}/>
+            <Section>
+                <TitleAndPerson>
+                    <TitleAndTags>
+                        <Title>{logement.title}</Title>
+                        <Subtitle>{logement.location}</Subtitle>
+                        <TagsDiv >
+                            {logement.tags.map((item, index) => (
                             <AllTags key={index} content={item} />
-                        ))}
-                    </TagsDiv>
-                </TitleAndTags>
-                <PersonAndRating>
-                    <NameAndPics>
-                        <Hostname fullName={logement.host.name} />
-                        <ProfilPics src={logement.host.picture} />
-                    </NameAndPics>
-                    <StarRating rating={parseInt(logement.rating, 10)} />
-                </PersonAndRating>
-            </TitleAndPerson>
-            <BothDropdown>
-                {dropdownData.map((item, index) => (
-                <TheDropdown key={index} title={item.title} content={item.content} />
-                ))}
-            </BothDropdown>
-        </Section>
+                            ))}
+                        </TagsDiv>
+                    </TitleAndTags>
+                    <PersonAndRating>
+                        <NameAndPics>
+                            <Hostname fullName={logement.host.name} />
+                            <ProfilPicture image={logement.host.picture}/>
+                        </NameAndPics>
+                        <StarRating rating={parseInt(logement.rating, 10)} />
+                    </PersonAndRating>
+                </TitleAndPerson>
+                <BothCollapse>
+                    {dropdownData.map((item, index) => (
+                    <CollapseAccomodation key={index} title={item.title} content={item.content} />
+                    ))}
+                </BothCollapse>
+            </Section>
         </>
     )
 }
 
-export default CharacteristicSection
+export default SliderAndCharacteristic

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Logo from '../assets/logo_footer.png'
+import Logo from '../../assets/logo_footer.png'
 
 
 const FooterSection = styled.footer`
@@ -34,7 +34,7 @@ function Footer() {
     return (
         <FooterSection>
             <FooterContent>
-                <FooterLogo src={Logo} />
+                <FooterLogo src={Logo} alt='Logo de Kasa'/>
                 <p>© 2020 Kasa. All rights reserved</p>
             </FooterContent>
         </FooterSection>

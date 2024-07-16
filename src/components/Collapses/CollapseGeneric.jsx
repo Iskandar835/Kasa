@@ -3,10 +3,10 @@ import { useState } from 'react'
 import PropTypes from 'prop-types'
 
 
-const Dropdown = styled.div`
+export const Collapse = styled.div`
     width: 100%;
 `
-const TitleAndIcon = styled.div`
+export const TitleAndIcon = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +22,8 @@ const TitleAndIcon = styled.div`
     font-size: 13px;
   }
 `
-const IconButton = styled.i`
+export const IconButton = styled.i`
+  font-size: 24px;
   cursor: pointer;
   transition: transform 250ms ease-in-out;
 
@@ -36,44 +37,45 @@ const IconButton = styled.i`
     font-size: 18px;
   }
 `
-const ContentSlideDown = styled.div`
+export const ContentSlideDown = styled.div`
+  max-height: 0;
   padding: 0 20px;
   color: #000000;
   background: #F6F6F6;
   border-radius: 5px;
-  overflow: auto;
-  height: 0;
-  transition: height 250ms ease-in-out;
-
+  overflow: hidden;
+  transition: max-height 250ms ease-in-out;
 
   ${({ $isActive }) => 
     $isActive &&
     css`
-      height: 200px;
+      max-height: 200px;
       padding: 0 20px;
     `
   }
 `
-const Text = styled.p`
+export const Text = styled.p`
   display: flex;
   flex-direction: column;
   gap: 5px;
   font-size: 18px;
   font-weight: 400;
+  line-height: 28px;
 
   @media (max-width: 768px) {
     font-size: 12px;
+    line-height: 18px;
   }
 `
-function TheDropdown({ title, content }) {
-  const [isActive, setIsActive] = useState(false);
 
-  function handleToggle() {
-    setIsActive(prevIsActive => !prevIsActive);
+function TheCollapse({ title, content }) {
+  const [isActive, setIsActive] = useState(false)
+  const handleToggle = () => {
+    setIsActive(prevIsActive => !prevIsActive)
   }
 
   return (
-    <Dropdown>
+    <Collapse>
       <TitleAndIcon>
         {title}
         <IconButton
@@ -82,21 +84,20 @@ function TheDropdown({ title, content }) {
           onClick={handleToggle}
         />
       </TitleAndIcon>
-      <ContentSlideDown
-        $isActive={isActive}>
+      <ContentSlideDown $isActive={isActive}>
         <Text>{content}</Text>
       </ContentSlideDown>
-    </Dropdown>
-  );
+    </Collapse>
+  )
 }
 
-TheDropdown.propTypes = {
+TheCollapse.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string)
   ]).isRequired,
-};
+}
 
-export default TheDropdown;
+export default TheCollapse

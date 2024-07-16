@@ -1,12 +1,12 @@
-import BannerAbout from '../components/banner/Banner1'
-import DisplayAllDropdown from '../components/DropdownAbout'
+import BannerAbout from '../components/Banners/BannerAbout'
+import DisplayAllCollapse from '../components/Collapses/CollapseAbout'
 
 
 function About() {
     return(
         <main>
             <BannerAbout />
-            <DisplayAllDropdown />
+            <DisplayAllCollapse />
         </main>
     )
 }
