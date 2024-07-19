@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import data from '../data/data.json'
 import Slideshow from './Slideshow'
 import AllTags from './Tags'
@@ -88,7 +89,19 @@ const BothCollapse = styled.div`
 
 function SliderAndCharacteristic() {
     const { id } = useParams()
+    const navigate = useNavigate()
     const logement = data.find(item => item.id === id)
+  
+    useEffect(() => {
+      if (!logement) {
+        navigate('/')
+      }
+    }, [logement, navigate])
+  
+    if (!logement) {
+      return null
+    }
+    
     const content2 = logement.equipments.map((item, index) => (
         <span key={index}>{item}</span>
     ))
