@@ -94,7 +94,7 @@ function SliderAndCharacteristic() {
   
     useEffect(() => {
       if (!logement) {
-        navigate('/')
+        navigate('/error')
       }
     }, [logement, navigate])
   
