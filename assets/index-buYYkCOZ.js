@@ -115,7 +115,7 @@ Error generating stack: `+i.message+`
     font-size: 12px;
     text-transform: uppercase;
   }
-`;function G0(){const e=Yr();return x.jsxs(W0,{children:[x.jsx(zi,{to:"/kasa",children:x.jsx(Q0,{src:H0,alt:"Logo de Kasa"})}),x.jsxs(K0,{children:[x.jsx(Ju,{to:"/kasa",$isActive:e.pathname==="/kasa",children:"Accueil"}),x.jsx(Ju,{to:"/apropos",$isActive:e.pathname==="/apropos",children:"A propos"})]})]})}const Gd=T.div`
+`;function G0(){const e=Yr();return x.jsxs(W0,{children:[x.jsx(zi,{to:"/",children:x.jsx(Q0,{src:H0,alt:"Logo de Kasa"})}),x.jsxs(K0,{children:[x.jsx(Ju,{to:"/",$isActive:e.pathname==="/",children:"Accueil"}),x.jsx(Ju,{to:"/apropos",$isActive:e.pathname==="/apropos",children:"A propos"})]})]})}const Gd=T.div`
     position: relative;    
     display: flex;
     justify-content: center;
@@ -144,7 +144,7 @@ Error generating stack: `+i.message+`
     width: 100%;    
     height: 100%;
     object-fit: cover;
-`,Y0="/kasa/assets/image_accueil-XM2U81vk.png",q0=T.section`
+`,Y0="/Kasa/assets/image_accueil-XM2U81vk.png",q0=T.section`
     margin: 0 100px 45px 100px;
     
     @media (min-width: 768px) and (max-width: 1024px) {
@@ -221,7 +221,7 @@ Error generating stack: `+i.message+`
     }
 `,l1=T(zi)`
     width: 100%;
-`;function a1(){const[e,t]=P.useState([]);return P.useEffect(()=>{t(bd)},[]),x.jsx(s1,{children:e.map(n=>x.jsx(l1,{to:`/fiche-logement/${n.id}`,children:x.jsx(Xd,{title:n.title,cover:n.cover})},n.id))})}function u1(){return x.jsxs("main",{children:[x.jsx(Z0,{}),x.jsx(a1,{})]})}const c1="/kasa/assets/image_apropos-D3olFcY7.png",p1=T.section`
+`;function a1(){const[e,t]=P.useState([]);return P.useEffect(()=>{t(bd)},[]),x.jsx(s1,{children:e.map(n=>x.jsx(l1,{to:`/fiche-logement/${n.id}`,children:x.jsx(Xd,{title:n.title,cover:n.cover})},n.id))})}function u1(){return x.jsxs("main",{children:[x.jsx(Z0,{}),x.jsx(a1,{})]})}const c1="/Kasa/assets/image_apropos-D3olFcY7.png",p1=T.section`
     margin: 0 100px 40px 100px;
     
     @media (min-width: 768px) and (max-width: 1024px) {
@@ -563,7 +563,7 @@ Error generating stack: `+i.message+`
     @media (max-width: 768px) {
         font-size: 14px;
     }
-`;function X1(){return x.jsxs(G1,{children:[x.jsx(Y1,{children:"404"}),x.jsxs(q1,{children:["Oups! La page que ",x.jsx(J1,{children:"vous demandez n'existe pas."})]}),x.jsx(Z1,{to:"/kasa",children:"Retourner sur la page d'accueil"})]})}const b1="data:image/png;base64,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",ev=T.footer`
+`;function X1(){return x.jsxs(G1,{children:[x.jsx(Y1,{children:"404"}),x.jsxs(q1,{children:["Oups! La page que ",x.jsx(J1,{children:"vous demandez n'existe pas."})]}),x.jsx(Z1,{to:"/",children:"Retourner sur la page d'accueil"})]})}const b1="data:image/png;base64,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",ev=T.footer`
     padding: 65px 0 10px 0;
     background: #000000;
 
@@ -587,4 +587,4 @@ Error generating stack: `+i.message+`
 `,nv=T.img`
     width: 122px;
     height: 40px;
-`;function rv(){return x.jsx(ev,{children:x.jsxs(tv,{children:[x.jsx(nv,{src:b1,alt:"Logo de Kasa"}),x.jsx("p",{children:"© 2020 Kasa. All rights reserved"})]})})}fs.createRoot(document.getElementById("root")).render(x.jsx(Qe.StrictMode,{children:x.jsxs(Mg,{children:[x.jsx(V0,{}),x.jsx(G0,{}),x.jsxs(Tg,{children:[x.jsx(ur,{path:"/kasa",element:x.jsx(u1,{})}),x.jsx(ur,{path:"/apropos",element:x.jsx(y1,{})}),x.jsx(ur,{path:"/fiche-logement/:id",element:x.jsx(K1,{})}),x.jsx(ur,{path:"*",element:x.jsx(X1,{})})]}),x.jsx(rv,{})]})}));
+`;function rv(){return x.jsx(ev,{children:x.jsxs(tv,{children:[x.jsx(nv,{src:b1,alt:"Logo de Kasa"}),x.jsx("p",{children:"© 2020 Kasa. All rights reserved"})]})})}fs.createRoot(document.getElementById("root")).render(x.jsx(Qe.StrictMode,{children:x.jsxs(Mg,{children:[x.jsx(V0,{}),x.jsx(G0,{}),x.jsxs(Tg,{children:[x.jsx(ur,{path:"/",element:x.jsx(u1,{})}),x.jsx(ur,{path:"/apropos",element:x.jsx(y1,{})}),x.jsx(ur,{path:"/fiche-logement/:id",element:x.jsx(K1,{})}),x.jsx(ur,{path:"*",element:x.jsx(X1,{})})]}),x.jsx(rv,{})]})}));
