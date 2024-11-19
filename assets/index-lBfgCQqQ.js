@@ -115,7 +115,7 @@ Error generating stack: `+i.message+`
     font-size: 12px;
     text-transform: uppercase;
   }
-`;function G0(){const e=Yr();return x.jsxs(W0,{children:[x.jsx(zi,{to:"/",children:x.jsx(Q0,{src:H0,alt:"Logo de Kasa"})}),x.jsxs(K0,{children:[x.jsx(Ju,{to:"/",$isActive:e.pathname==="/",children:"Accueil"}),x.jsx(Ju,{to:"/apropos",$isActive:e.pathname==="/apropos",children:"A propos"})]})]})}const Gd=T.div`
+`;function G0(){const e=Yr();return x.jsxs(W0,{children:[x.jsx(zi,{to:"/Kasa",children:x.jsx(Q0,{src:H0,alt:"Logo de Kasa"})}),x.jsxs(K0,{children:[x.jsx(Ju,{to:"/Kasa",$isActive:e.pathname==="/",children:"Accueil"}),x.jsx(Ju,{to:"/apropos",$isActive:e.pathname==="/apropos",children:"A propos"})]})]})}const Gd=T.div`
     position: relative;    
     display: flex;
     justify-content: center;
@@ -587,4 +587,4 @@ Error generating stack: `+i.message+`
 `,nv=T.img`
     width: 122px;
     height: 40px;
-`;function rv(){return x.jsx(ev,{children:x.jsxs(tv,{children:[x.jsx(nv,{src:b1,alt:"Logo de Kasa"}),x.jsx("p",{children:"© 2020 Kasa. All rights reserved"})]})})}fs.createRoot(document.getElementById("root")).render(x.jsx(Qe.StrictMode,{children:x.jsxs(Mg,{children:[x.jsx(V0,{}),x.jsx(G0,{}),x.jsxs(Tg,{children:[x.jsx(ur,{path:"/",element:x.jsx(u1,{})}),x.jsx(ur,{path:"/apropos",element:x.jsx(y1,{})}),x.jsx(ur,{path:"/fiche-logement/:id",element:x.jsx(K1,{})}),x.jsx(ur,{path:"*",element:x.jsx(X1,{})})]}),x.jsx(rv,{})]})}));
+`;function rv(){return x.jsx(ev,{children:x.jsxs(tv,{children:[x.jsx(nv,{src:b1,alt:"Logo de Kasa"}),x.jsx("p",{children:"© 2020 Kasa. All rights reserved"})]})})}fs.createRoot(document.getElementById("root")).render(x.jsx(Qe.StrictMode,{children:x.jsxs(Mg,{children:[x.jsx(V0,{}),x.jsx(G0,{}),x.jsxs(Tg,{children:[x.jsx(ur,{path:"/kasa",element:x.jsx(u1,{})}),x.jsx(ur,{path:"/apropos",element:x.jsx(y1,{})}),x.jsx(ur,{path:"/fiche-logement/:id",element:x.jsx(K1,{})}),x.jsx(ur,{path:"*",element:x.jsx(X1,{})})]}),x.jsx(rv,{})]})}));
