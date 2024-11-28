@@ -1,10 +1,5 @@
-# Voici mon site Kasa, entièrement opérationnel et qui répond aux attentes du coding guidelines.
+# Voici mon site Kasa
+## Il permet de visualiser différents biens immobiliers en location, avec leurs photos, équipements, notes et profils des propriétaires.
 
-### React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Voici ci-dessous le lien Github Pages :
+#### https://iskandar835.github.io/Kasa/
